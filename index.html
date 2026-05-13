@@ -16,6 +16,10 @@
 
 
   <link rel="stylesheet" href="style.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
@@ -23,8 +27,11 @@
 
   <header>
     <div class="container navbar-container">
-      <div class="logo">Tech<span>Flow</span></div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="TechFlow Logo">Tech<span>Flow</span></a>
 
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
 
       <div class="hamburger" id="hamburger-btn">
         <i class="fas fa-bars"></i>

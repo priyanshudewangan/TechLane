@@ -10,13 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
 
   <header>
     <div class="container navbar-container">
-      <div class="logo">Tech<span>Flow</span></div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="TechFlow Logo">Tech<span>Flow</span></a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
       <div class="hamburger" id="hamburger-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -31,10 +38,10 @@
     </div>
   </header>
 
-  <section style="background: #1e293b; color: #f8fafc; text-align: center; padding: 40px 0;">
+  <section style="background: var(--surface); color: var(--text-color); text-align: center; padding: 40px 0;">
     <div class="container">
       <h2>Contact Us</h2>
-      <p style="color: #94a3b8;">Send us a message and let's work together!</p>
+      <p style="color: var(--muted-lighter);">Send us a message and let's work together!</p>
     </div>
   </section>
 
@@ -52,17 +59,17 @@
             usually reply within 24 hours.</p>
 
           <div style="margin-bottom: 15px;">
-            <i class="fas fa-map-marker-alt" style="color:#38bdf8; width: 25px;"></i>
+            <i class="fas fa-map-marker-alt" style="color:var(--primary); width: 25px;"></i>
             <span>Bhuaneswar, Odisha</span>
           </div>
 
           <div style="margin-bottom: 15px;">
-            <i class="fas fa-phone" style="color:#38bdf8; width: 25px;"></i>
+            <i class="fas fa-phone" style="color:var(--primary); width: 25px;"></i>
             <span>9999999999</span>
           </div>
 
           <div style="margin-bottom: 15px;">
-            <i class="fas fa-envelope" style="color:#38bdf8; width: 25px;"></i>
+            <i class="fas fa-envelope" style="color:var(--primary); width: 25px;"></i>
             <span>[EMAIL_ADDRESS]</span>
           </div>
         </div>

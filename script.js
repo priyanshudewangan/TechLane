@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Set initial icon state based on already active theme
+    const initialTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateThemeIcon(initialTheme);
+    
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function () {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
+    
+    function updateThemeIcon(theme) {
+        if (!themeIcon) return;
+        if (theme === 'light') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    }
 
     const hamburger = document.getElementById('hamburger-btn');
     const navMenu = document.getElementById('nav-menu');

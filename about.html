@@ -10,13 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
 
   <header>
     <div class="container navbar-container">
-      <div class="logo">Tech<span>Flow</span></div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="TechFlow Logo">Tech<span>Flow</span></a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
       <div class="hamburger" id="hamburger-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -32,15 +39,15 @@
   </header>
 
 
-  <section style="background: #1e293b; color: #f8fafc; text-align: center; padding: 40px 0;">
+  <section style="background: var(--surface); color: var(--text-color); text-align: center; padding: 40px 0;">
     <div class="container">
       <h2>About Our Team</h2>
-      <p style="color: #94a3b8;">Get to know the story behind TechFlow.</p>
+      <p style="color: var(--muted-lighter);">Get to know the story behind TechFlow.</p>
     </div>
   </section>
 
 
-  <section class="section-padding" style="background-color: #0f172a;">
+  <section class="section-padding" style="background-color: var(--bg-color);">
     <div class="container">
       <div class="about-content">
         <div class="about-text">
@@ -59,7 +66,7 @@
   </section>
 
 
-  <section class="section-padding" style="background-color: #38bdf8; color: #0f172a; text-align: center;">
+  <section class="section-padding" style="background-color: var(--primary); color: var(--btn-text); text-align: center;">
     <div class="container">
       <h3 style="font-size: 28px; margin-bottom: 15px;">Our Mission</h3>
       <p style="max-width: 700px; margin: 0 auto; font-size: 18px;">"To deliver modern digital infrastructure and

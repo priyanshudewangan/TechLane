@@ -10,13 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
 
 <body>
 
   <header>
     <div class="container navbar-container">
-      <div class="logo">Tech<span>Flow</span></div>
+      <a href="index.html" class="logo"><img src="images/logo.png" alt="TechFlow Logo">Tech<span>Flow</span></a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
       <div class="hamburger" id="hamburger-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -31,10 +38,10 @@
     </div>
   </header>
 
-  <section style="background: #1e293b; color: #f8fafc; text-align: center; padding: 40px 0;">
+  <section style="background: var(--surface); color: var(--text-color); text-align: center; padding: 40px 0;">
       <div class="container">
           <h2>What We Do</h2>
-          <p style="color: #94a3b8;">Discover all the professional digital services we provide.</p>
+          <p style="color: var(--muted-lighter);">Discover all the professional digital services we provide.</p>
       </div>
   </section>
 
